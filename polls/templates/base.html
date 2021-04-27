@@ -9,12 +9,13 @@
     <script src="//unpkg.com/jquery/dist/jquery.min.js"></script>
     <script src="//unpkg.com/bootstrap/dist/js/bootstrap.min.js"></script>
 
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 </head>
 <body>
     <div class="container">
         {%block contents%}
         {%endblock%}
-
     </div>
 
 

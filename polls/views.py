@@ -21,9 +21,6 @@ def detail(request, question_id):
 
     return render(request, 'detail.html', {"question":question})
 
-def result(request, question_id):
-    return HttpResponse("문제 결과: {}".format(question_id))
-
 
 def vote(request, question_id):
     question = Question.objects.get(pk=question_id)
@@ -43,3 +40,16 @@ def vote(request, question_id):
         selected_choice.save()
 
     return redirect('/polls/{}/results'.format(question_id))
+
+
+
+
+def result(request, question_id):
+
+    try:
+        question = Question.objects.get(pk=question_id)
+    except Exception as e:
+        return render(request, '/')
+
+    return render(request, 'results.html',{"question":question})
+    
