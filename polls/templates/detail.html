@@ -6,7 +6,7 @@
 <p><strong>{{error_message}}</strong></p>
 {%endif%}
 
-<form action="/polls/{{question.id}}/vote" method="POST">
+<form action="{% url 'polls:vote' question.id %}" method="POST">
     <div class="form-group">
     {% csrf_token%}
     

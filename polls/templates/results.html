@@ -4,14 +4,12 @@
 
     <ul>
         {%for choice in question.choice_set.all %}
-            <li>{{}}문항: {{choice.choice_text}}</li>
+            <li>{{forloop.counter}}번 문항: {{choice.choice_text}}</li>
             <p>투표수:{{choice.votes}}</p>
-
-
         {%endfor%}
 
 
     </ul>
-    <a href="/polls/{{question.id}}//detail">vote again?</a>
+    <a href="{% url 'polls:detail' question.id %}">vote again?</a>
 
 {%endblock%}

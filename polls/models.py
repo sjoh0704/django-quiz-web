@@ -1,6 +1,7 @@
 import datetime
 from django.db import models
 from django.utils import timezone
+from django.shortcuts import get_object_or_404
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
